@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Curriculo Portifólio Arthur Philipp De Conto</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class=""></div>
+        <div>
+          SENAC 2025</p>
+        </div>
+        <div>
+          <h1>Arthur Philipp De conto</h1>
+          <p class="lead">Selecione o projeto e clique no link.</p>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Alternar entre modo claro e escuro">🌙</button>
+      </header>
+
+      <main>
+        <section class="cards-vertical">
+          <article class="card">
+            <h2 class="project-name">SkillYard - Projeto Profissional</h2>
+            <p class="desc">
+              SkillYard é o meu Tcc que é uma plataforma acadêmica de troca de habilidades construída sobre o Next.js (App Router). O projeto unifica frontend e backend em um único repositório, oferecendo autenticação com RBAC, CRUD de posts, chat em tempo real e esteira pronta para deploy na Vercel.
+            <a
+              class="btn"
+              href="https://github.com/arthurpdeconto/SkillYard"
+              target="_blank"
+              >Acessar Repositório</a
+            >
+          </article>
+
+          <article class="card">
+            <h2 class="project-name">Sistema de gestão de aulas (SIGEAS).</h2>
+            <p class="desc">
+              Projeto criado com o intuito de gerenciar aulas, alunos e professores em uma instituição educacional. Desenvolvido com React para o frontend e Node.js com Express para o backend.
+            </p>
+            <a
+              class="btn"
+              href="https://github.com/arthurpdeconto/projetoTeams"
+              target="_blank"
+              >Acessar Repositório</a
+            >
+          </article>
+
+          <article class="card">
+            <h2 class="project-name">Trabalho gerenciar estacionamento.</h2>
+            <p class="desc">
+              Projeto feito em grupo para o tecnico, onde o objetivo era criar um sistema de gerenciamento de estacionamento utilizando HTML, CSS, JavaScript e desenvolver o sistema que inclue Requisitos Funcionais: Cadastro de veículos com modelo e placa Listagem de veículos estacionados Registro de hora de saída Exclusão de registros dos carros e Atualização de status,
+  
+
+            </p>
+            <a
+              class="btn"
+              href="https://github.com/arthurpdeconto/estaciona-2025"
+              target="_blank"
+              >Acessar Repositório</a
+            >
+        </section>
+      </main>
+
+      <footer>
+        <p>Meu GITHUB Profissional:</p>
+        <a href="https://github.com/arthurpdeconto" target="_blank"
+          >GITHUB</a
+        >
+      </footer>
+    </div>
+  
+    <script>
+      (function () {
+        const root = document.documentElement;
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        function applyTheme(theme) {
+          if (theme === "light") {
+            root.setAttribute("data-theme", "light");
+          } else {
+            root.removeAttribute("data-theme");
+          }
+
+          const btn = document.querySelector(".theme-toggle");
+          if (!btn) return;
+          const isLight = root.getAttribute("data-theme") === "light";
+          btn.textContent = isLight ? "☀️" : "🌙";
+          btn.setAttribute(
+            "aria-label",
+            isLight ? "Ativar modo escuro" : "Ativar modo claro"
+          );
+        }
+
+        const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
+        applyTheme(initialTheme);
+
+        window.addEventListener("load", function () {
+          const btn = document.querySelector(".theme-toggle");
+          if (!btn) return;
+          btn.addEventListener("click", function () {
+            const isLight = root.getAttribute("data-theme") === "light";
+            const next = isLight ? "dark" : "light";
+            applyTheme(next);
+            localStorage.setItem("theme", next);
+          });
+        });
+      })();
+    </script>
+
+  </body>
+</html>
